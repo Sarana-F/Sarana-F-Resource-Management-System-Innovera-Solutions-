@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Register Hackathon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<br></br>
+<div class="container">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="text-center">Register Hackathon</h2>
+      </div>
+      <div class="card-body">
+        <form th:action="@{/saveHackathon}" th:object="${hackathon}" method="POST">
+          <div class="form-group mb-3">
+            <label for="title">Title:</label>
+            <input th:field="*{title}" type="text" class="form-control" id="title" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="description">Description:</label>
+            <input th:field="*{description}" type="text" class="form-control" id="description" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="startDate">Start Date:</label>
+            <input th:field="*{startDate}" type="date" class="form-control" id="startDate" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="endDate">End Date:</label>
+            <input th:field="*{endDate}" type="date" class="form-control" id="endDate" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

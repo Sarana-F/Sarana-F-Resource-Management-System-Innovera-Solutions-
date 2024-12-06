@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings - Innovera RMS</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<header style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem;">
+    <!-- Corrected image path assuming 'logo.jpg' is under 'static/css' -->
+    <img src="/css/logo.jpg" alt="Innovera Solutions Logo" style="height: 50px; width: auto;">
+    <h1>Admin Panel - Innovera RMS</h1>
+</header>
+
+<main>
+    <div class="settings-container">
+        <h2>System Settings</h2>
+        <form action="/admin/settings/update" method="post">
+            <!-- CSRF Token -->
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+            <!-- Company Name -->
+            <div class="form-group">
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName" placeholder="Innovera Solutions" required>
+            </div>
+
+            <!-- Email Notifications -->
+            <div class="form-group">
+                <label for="emailNotifications">Email Notifications:</label>
+                <select id="emailNotifications" name="emailNotifications">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+
+            <!-- Password Policy -->
+            <div class="form-group">
+                <label for="passwordPolicy">Password Policy:</label>
+                <textarea id="passwordPolicy" name="passwordPolicy" rows="3" placeholder="Minimum 8 characters, include special characters, etc."></textarea>
+            </div>
+
+            <!-- Save Button -->
+            <div class="form-group">
+                <button type="submit" class="btn">Save Settings</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>

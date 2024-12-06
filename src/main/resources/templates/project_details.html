@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+  <h1 th:text="${project.name}">Project Name</h1>
+</header>
+<main>
+  <div class="project-details">
+    <h2>Project Description</h2>
+    <p th:text="${project.description}">Project Description</p>
+
+    <h2>Project Type</h2>
+    <p th:text="${project.type}">Project Type</p>
+
+    <h2>Created By</h2>
+    <p th:text="${project.user.email}">Creator Email</p>
+
+    <button class="btn" onclick="window.history.back()">Back to Projects</button>
+  </div>
+</main>
+</body>
+</html>
+
+

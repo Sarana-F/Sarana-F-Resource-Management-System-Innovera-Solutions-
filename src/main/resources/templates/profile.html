@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile - Innovera RMS</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<header>
+  <h1>User Profile - Innovera RMS</h1>
+</header>
+<main>
+  <div class="form-container">
+    <h2>Profile Information</h2>
+    <form action="/saveProfile" method="post">
+      <input type="hidden" id="id" name="id" th:value="${user.id}">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:value="${user.name}" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" th:value="${user.email}" required>
+      </div>
+      <div>
+        <label for="role">Role:</label>
+        <select id="role" name="role" th:value="${user.role}" disabled>
+          <option value="IDEATOR">Ideator</option>
+          <option value="INVESTOR">Investor</option>
+          <option value="ADMIN">Admin</option>
+        </select>
+      </div>
+      <div>
+        <label for="profileInfo">Profile Information:</label>
+        <textarea id="profileInfo" name="profileInfo" th:text="${user.profileInfo}"></textarea>
+      </div>
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+      <button type="submit">Save Profile</button>
+    </form>
+
+    <h2>Change Password</h2>
+    <form action="/savePassword" method="post">
+      <input type="hidden" id="userId" name="userId" th:value="${user.id}">
+      <div>
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+      </div>
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+      <button type="submit">Change Password</button>
+    </form>
+  </div>
+</main>
+</body>
+</html>

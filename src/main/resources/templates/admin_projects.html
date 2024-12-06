@@ -1,0 +1,61 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Manage Projects - Admin</title>-->
+<!--  <link rel="stylesheet" href="/css/style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--  <h1>Manage Projects</h1>-->
+<!--</header>-->
+<!--<main>-->
+<!--  <div class="content">-->
+<!--    <h2>All Projects</h2>-->
+<!--    <a href="/projects/new">Create New Project</a>-->
+<!--    <ul>-->
+<!--      <li th:each="project : ${projects}">-->
+<!--        <h3 th:text="${project.name}">Project Name</h3>-->
+<!--        <p th:text="${project.description}">Project Description</p>-->
+<!--        <a th:href="@{/projects/edit/{id}(id=${project.id})}">Edit</a>-->
+<!--        <form th:action="@{/projects/delete/{id}(id=${project.id})}" method="post">-->
+<!--          <button type="submit">Delete</button>-->
+<!--        </form>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</main>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Projects - Admin</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="manage-projects-header">
+  <h1>Manage Projects</h1>
+</header>
+<main class="manage-projects-main">
+  <div class="manage-projects-content">
+    <h2>All Projects</h2>
+    <a href="/projects/new" class="manage-projects-btn">Create New Project</a>
+    <ul class="manage-projects-list">
+      <li class="manage-projects-item" th:each="project : ${projects}">
+        <h3 th:text="${project.name}">Project Name</h3>
+        <p th:text="${project.description}">Project Description</p>
+        <a th:href="@{/projects/edit/{id}(id=${project.id})}" class="manage-projects-btn">Edit</a>
+        <form th:action="@{/projects/delete/{id}(id=${project.id})}" method="post" class="manage-projects-inline-form">
+          <button type="submit" class="manage-projects-btn">Delete</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>
+

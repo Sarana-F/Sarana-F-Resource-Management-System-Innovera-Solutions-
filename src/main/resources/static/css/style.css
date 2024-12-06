@@ -1,0 +1,463 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4c3; /* Light green background for a fresh look */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    background-color: #8bc34a; /* Darker green header for contrast */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+}
+
+main {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px; /* Adjust to move below the header */
+}
+
+h1 {
+    color: #333; /* Changed to dark color for better visibility */
+}
+
+h2 {
+    color: #4a5b23; /* Darker green color for better contrast */
+}
+
+.dashboard-container,
+.admin-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Maximum width for the admin panel */
+}
+
+.sidebar {
+    background-color: #4caf50; /* Green sidebar */
+    color: white;
+    padding: 1rem;
+    width: 200px; /* Width of the sidebar */
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-left: 1rem;
+    box-sizing: border-box;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+form {
+    width: 100%;
+}
+
+form div {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: .5rem;
+    text-align: left; /* Ensure labels are aligned to the left */
+    width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #8bc34a;
+    color: white;
+    padding: .75rem 1.5rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px; /* Restrict the maximum width */
+}
+
+button:hover {
+    background-color: #7cb342;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: .75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #8bc34a; /* Table header background color */
+    color: white;
+}
+
+/* Project Details Page */
+.project-details {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    margin: 1rem auto;
+}
+
+.project-details h2 {
+    color: #4a5b23;
+    margin-top: 1rem;
+}
+
+.project-details p {
+    color: #333;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.project-details .btn {
+    margin-top: 1.5rem;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.project-details .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Investor Projects Page */
+.center-text {
+    text-align: center;
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.project-item h3 {
+    margin-top: 0;
+    color: #4a5b23;
+}
+
+.project-item p {
+    color: #333;
+    margin: 10px 0;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-group .btn {
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    width: 150px; /* Consistent width */
+    height: 40px; /* Consistent height */
+    margin: 5px;
+    padding: 0;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px; /* Adjust font size */
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.btn-group .btn:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .btn-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .project-item {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Ideator Projects */
+.ideator-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-left: 1rem;
+    box-sizing: border-box;
+}
+.header-actions {
+    text-align: center; /* Centers content horizontally */
+    margin-bottom: 20px; /* Space below header actions */
+}
+
+.header-actions h2 {
+    margin: 0;
+}
+
+.create-project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.create-project-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.manage-projects-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.manage-projects-buttons .btn, .manage-projects-buttons button {
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    width: 120px; /* Consistent width */
+    height: 35px; /* Consistent height */
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Prevents text wrapping */
+    text-decoration: none;
+}
+
+.manage-projects-buttons .btn:hover, .manage-projects-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.manage-projects-buttons form {
+    display: inline; /* Keeps forms inline with other elements */
+}
+
+.form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 1rem auto;
+}
+form {
+    width: 100%;
+}
+
+/* Admin Projects */
+
+/* Manage Projects Page Specific Styles */
+
+/* Header */
+.manage-projects-header {
+    background-color: #8bc34a; /* Darker green header for contrast */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+}
+
+/* Main */
+.manage-projects-main {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px; /* Adjust to move below the header */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Headings */
+.manage-projects-header h1 {
+    color: #333; /* Changed to dark color for better visibility */
+}
+
+.manage-projects-content h2 {
+    color: #4a5b23; /* Darker green color for better contrast */
+}
+
+/* Content */
+.manage-projects-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Button */
+.manage-projects-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    max-width: 150px; /* Restrict the maximum width */
+}
+
+.manage-projects-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Project Container */
+.manage-projects-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.manage-projects-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Inline Form */
+.manage-projects-inline-form {
+    display: inline;
+}
+.logo {
+    position: absolute;
+    height: 50px;
+    width: auto; /* Ensures aspect ratio is maintained */
+}
+
+
+
+
+
+
+
+
+

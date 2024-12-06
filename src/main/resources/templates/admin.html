@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Innovera RMS</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<header style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem;">
+  <!-- Corrected image path assuming 'logo.jpg' is under 'static/css' -->
+  <img src="/css/logo.jpg" alt="Innovera Solutions Logo" style="height: 50px; width: auto;">
+  <h1>Admin Panel - Innovera RMS</h1>
+</header>
+
+<main>
+  <div class="admin-container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/admin">Dashboard</a></li>
+        <li><a href="/admin/users">Manage Users</a></li>
+        <li><a href="/admin/projects">Manage Projects</a></li>
+        <li><a href="/admin/reports">View Reports</a></li>
+        <li><a href="/admin/settings">Settings</a></li>
+        <li><a href="resources">Manage Resources</a></li>
+        <li><a href="hackathon">Manage Hackathon</a></li>
+
+        <!-- Logout form -->
+        <li>
+          <form th:action="@{/logout}" method="post" style="display: inline;">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <button type="submit" style="background: none; border: none; color: inherit; cursor: pointer;">
+              Logout
+            </button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="welcome-section">
+        <h1>Welcome to Innovera Solutions</h1>
+        <p>Use the sidebar to navigate the admin panel.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h2>Manage Users</h2>
+          <p>Oversee user registrations and activity.</p>
+          <a href="/admin/users" class="btn">Go to Users</a>
+        </div>
+        <div class="card">
+          <h2>Manage Projects</h2>
+          <p>Review and control ongoing projects.</p>
+          <a href="/admin/projects" class="btn">Go to Projects</a>
+        </div>
+        <div class="card">
+          <h2>View Reports</h2>
+          <p>Generate and view comprehensive reports.</p>
+          <a href="/admin/reports" class="btn">View Reports</a>
+        </div>
+        <div class="card">
+          <h2>Settings</h2>
+          <p>Adjust system settings and configurations.</p>
+          <a href="/admin/settings" class="btn">Go to Settings</a>
+        </div>
+        <div class="card">
+          <h2>Manage Resources</h2>
+          <p>Monitor and allocate system resources.</p>
+          <a href="resources" class="btn">Go to Resources</a>
+        </div>
+        <div class="card">
+          <h2>Manage Hackathon</h2>
+          <p>Organize and oversee  hackathon events.</p>
+          <a href="hackathons" class="btn">Go to Hackathon</a>
+        </div>
+        <div class="card">
+          <h2>Upload Templates</h2>
+          <p>Upload new templates for use in the</p>
+          <a href="/upload" class="btn">Go to Hackathon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

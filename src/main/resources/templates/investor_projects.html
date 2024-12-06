@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Browse Projects - Investor</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+  <h1>Browse Projects</h1>
+</header>
+<main>
+  <div class="content">
+    <h2 class="center-text">Available Projects</h2>
+    <ul class="project-list">
+      <li th:each="project : ${projects}" class="project-item">
+        <h3 th:text="${project.name}" class="center-text">Project Name</h3>
+        <p th:text="${project.description}" class="center-text">Project Description</p>
+        <div class="btn-group">
+          <a th:href="@{/projects/view/{id}(id=${project.id})}" class="btn">View Details</a>
+          <form th:action="@{/projects/invest/{id}(id=${project.id})}" method="post">
+            <button type="submit" class="btn">Invest</button>
+          </form>
+        </div>
+      </li>
+    </ul>
+    <button class="btn" onclick="window.history.back()">Back to Projects</button>
+  </div>
+</main>
+</body>
+</html>
+
+
